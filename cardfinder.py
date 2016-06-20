@@ -44,8 +44,11 @@ def find_card():
 			
 			body = submission.title
 			link = submission.permalink
+			ogLink = submission.url
+
 			msg.attach(MIMEText(body.encode('utf-8'),'plain','utf-8'))
 			msg.attach(MIMEText(link.encode('utf-8'),'plain','utf-8'))
+			msg.attach(MIMEText(ogLink.encode('utf-8'),'plain','utf-8'))
 
 			server = smtplib.SMTP('smtp.gmail.com', 587)
 			server.starttls()
